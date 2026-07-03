@@ -932,11 +932,11 @@ SELECT 'support_tickets' AS table_name, COUNT(*) AS count FROM support_tickets;
 
 | table_name      | count |
 | --------------- | ----: |
-| customers       |     6 |
-| products        |     7 |
-| orders          |     8 |
-| order_items     |    12 |
-| support_tickets |     4 |
+| customers       |    60 |
+| products        |    60 |
+| orders          |    60 |
+| order_items     |   108 |
+| support_tickets |    54 |
 
 ---
 

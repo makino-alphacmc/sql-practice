@@ -1,54 +1,18 @@
-# support_tickets テーブル サンプルデータ（全4件）
+# support_tickets テーブル データ構造（サンプル）
 
-`csv/support_tickets.csv` / `ec_practice.support_tickets` の実データ一覧。
+```json
+{
+  "ticket_id": 9001,
+  "customer_id": 1,
+  "order_id": 1001,
+  "created_at": "2025-03-02 12:00:00",
+  "status": "closed",
+  "labels": ["delivery", "question"],
+  "messages": [
+    { "sender": "customer", "message": "配送日はいつですか？", "sent_at": "2025-03-02 12:00:00" },
+    { "sender": "support", "message": "明日到着予定です。", "sent_at": "2025-03-02 12:10:00" }
+  ]
+}
+```
 
-## 主要カラム一覧
-
-| ticket_id | customer_id | order_id | created_at           | status |
-| --------: | ----------: | -------: | --------------------- | ------ |
-| 9001      | 1           | 1001     | 2025-03-02 12:00:00   | closed |
-| 9002      | 2           | 1002     | 2025-03-04 09:30:00   | closed |
-| 9003      | 4           | 1005     | 2025-03-16 10:00:00   | open   |
-| 9004      | 6           | 1008     | 2025-04-06 13:20:00   | open   |
-
-> 注: サンプルデータ上は全チケットに`order_id`が入っているが、スキーマ上`order_id`はNULL許可。「問い合わせがない注文」を問う練習は`orders`側から`support_tickets`へLEFT JOINして判定する（README 6.5参照）。
-
-## labels（配列）
-
-| ticket_id | labels                          |
-| --------: | -------------------------------- |
-| 9001      | `{"delivery","question"}`        |
-| 9002      | `{"coupon","payment"}`           |
-| 9003      | `{"gift","address_change"}`      |
-| 9004      | `{"pending","payment"}`          |
-
-## messages（JSONB配列）
-
-### ticket_id = 9001（message_count = 2）
-| sender   | message                     | sent_at              |
-| -------- | ---------------------------- | --------------------- |
-| customer | 配送日はいつですか？         | 2025-03-02 12:00:00   |
-| support  | 明日到着予定です。           | 2025-03-02 12:10:00   |
-
-### ticket_id = 9002（message_count = 2）
-| sender   | message                             | sent_at              |
-| -------- | ------------------------------------- | --------------------- |
-| customer | クーポンは適用されていますか？        | 2025-03-04 09:30:00   |
-| support  | 2種類のクーポンが適用されています。   | 2025-03-04 09:45:00   |
-
-### ticket_id = 9003（message_count = 1）
-| sender   | message                                    | sent_at              |
-| -------- | --------------------------------------------| --------------------- |
-| customer | ギフト包装と住所変更をお願いしたいです。    | 2025-03-16 10:00:00   |
-
-### ticket_id = 9004（message_count = 1）
-| sender   | message                                | sent_at              |
-| -------- | ----------------------------------------| --------------------- |
-| customer | 銀行振込の確認はいつ反映されますか？    | 2025-04-06 13:20:00   |
-
-## 一目で使える集計メモ
-
-- paymentラベルを含む問い合わせ: 9002, 9004
-- giftラベルを含む問い合わせ: 9003
-- open状態: 9003, 9004 / closed状態: 9001, 9002
-- 問い合わせに紐づく注文: 1001, 1002, 1005, 1008（→ 問い合わせがない注文は 1003, 1004, 1006, 1007）
+全54件。実データは `csv/support_tickets.csv` または `SELECT * FROM support_tickets;` で確認。
