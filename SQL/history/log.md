@@ -35,4 +35,17 @@
 **出力してほしいカラム:** customer_id, customer_name, prefecture
 **ソート条件:** customer_nameの昇順
 
+**結果:** ✅ 正解（1回目はダブルクォート/OR構文のミスで修正、2回目で✅。`IN`も別解として紹介）
+
+---
+
+## 2026-07-04 - 問題3
+**テーマ:** JOIN
+**難易度:** ★★☆
+
+`orders` テーブルと `customers` テーブルを結合して、注文ごとに顧客名を付けた一覧を取得してください。
+
+**出力してほしいカラム:** order_id, customer_name, order_date, status
+**ソート条件:** order_idの昇順
+
 **結果:** 未回答
