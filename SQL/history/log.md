@@ -100,6 +100,19 @@
 **出力してほしいカラム:** customer_id, customer_name
 **ソート条件:** customer_idの昇順
 
+**結果:** ✅ 正解（1回目は`NOT EXIST`のタイプミス＋`customers.customer.id`のドット過多で❌、ヒント後の2回目で✅）
+
+---
+
+## 2026-07-05 - 問題9
+**テーマ:** 配列検索
+**難易度:** ★★☆
+
+`orders` テーブルから、クーポンを1つも使っていない（`coupon_codes`が空配列の）注文を取得してください。
+
+**出力してほしいカラム:** order_id, customer_id, coupon_codes
+**ソート条件:** order_idの昇順
+
 **結果:** 未回答
 
 ---
