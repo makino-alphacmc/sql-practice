@@ -48,4 +48,4 @@
 **出力してほしいカラム:** order_id, customer_name, order_date, status
 **ソート条件:** order_idの昇順
 
-**結果:** 未回答
+**結果:** ✅ 正解（1回目は`FROM`のカンマ結合と`INNER JOIN`混在・`ON`抜け・`ustomers`タイプミス・`ORDER BY =`でエラー、ヒント→模範解答提示後の再実行で✅）
