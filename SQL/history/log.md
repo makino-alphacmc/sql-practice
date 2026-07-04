@@ -49,3 +49,29 @@
 **ソート条件:** order_idの昇順
 
 **結果:** ✅ 正解（1回目は`FROM`のカンマ結合と`INNER JOIN`混在・`ON`抜け・`ustomers`タイプミス・`ORDER BY =`でエラー、ヒント→模範解答提示後の再実行で✅）
+
+---
+
+## 2026-07-04 - 問題4
+**テーマ:** GROUP BY / 集計
+**難易度:** ★★☆
+
+`customers` テーブルと `orders` テーブルを結合し、顧客ごとの注文件数を取得してください。
+
+**出力してほしいカラム:** customer_id, customer_name, order_count（注文件数）
+**ソート条件:** order_countの降順
+
+**結果:** 未回答（ユーザーの希望でJOIN練習を優先するため一旦保留、後日再開予定）
+
+---
+
+## 2026-07-04 - 問題5
+**テーマ:** JOIN
+**難易度:** ★★☆
+
+`order_items` テーブルと `products` テーブルを結合して、注文明細ごとに商品名を付けた一覧を取得してください。
+
+**出力してほしいカラム:** order_item_id, order_id, product_name, quantity, unit_price
+**ソート条件:** order_item_idの昇順
+
+**結果:** 未回答
