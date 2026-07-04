@@ -61,7 +61,20 @@
 **出力してほしいカラム:** customer_id, customer_name, order_count（注文件数）
 **ソート条件:** order_countの降順
 
-**結果:** 未回答（ユーザーの希望でJOIN練習を優先するため一旦保留、後日再開予定）
+**結果:** ✅ 正解（1回目は`customer_id`が曖昧＋GROUP BYに集計結果を含めるミスで❌、2回目でGROUP BY修正、3〜4回目で`ORDER BY DESC`忘れが続き、5回目で✅）
+
+---
+
+## 2026-07-04 - 問題6
+**テーマ:** CASE式
+**難易度:** ★★☆
+
+`orders` テーブルから、注文ID・ステータスに加えて、ステータスを日本語表示に変換した列を取得してください（`shipped`→発送済み、`pending`→保留中、`canceled`→キャンセル）。
+
+**出力してほしいカラム:** order_id, status, status_label
+**ソート条件:** order_idの昇順
+
+**結果:** 未回答
 
 ---
 
@@ -74,4 +87,4 @@
 **出力してほしいカラム:** order_item_id, order_id, product_name, quantity, unit_price
 **ソート条件:** order_item_idの昇順
 
-**結果:** 未回答
+**結果:** ✅ 正解（1回目はJOIN構文のミス「INNER JOIN order_items.product_id」で❌、ヒント後の2回目で✅）
