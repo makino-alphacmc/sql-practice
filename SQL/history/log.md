@@ -127,3 +127,28 @@
 **ソート条件:** order_item_idの昇順
 
 **結果:** ✅ 正解（1回目はJOIN構文のミス「INNER JOIN order_items.product_id」で❌、ヒント後の2回目で✅）
+
+---
+
+## 2026-07-06 - 問題10
+**テーマ:** UPDATE
+**難易度:** ★★☆
+
+`orders` テーブルで、`order_id` が `1003` の注文の `status` を `'canceled'` に更新してください。
+
+**出力してほしいカラム（更新後の確認用SELECT）:** order_id, status
+
+**結果:** ✅ 正解扱い（SQL自体は正しくWHERE条件も適切だったが、`BEGIN`を使わずオートコミットで実行してしまった。元データがもともと`canceled`だったため実害はなし。トランザクションの使い方を別途解説）
+
+---
+
+## 2026-07-06 - 問題11
+**テーマ:** JSONB検索
+**難易度:** ★★☆
+
+`customers` テーブルから、`profile`の`age_group`が`'20s'`、かつ`notification`内の`email`がtrueになっている顧客を取得してください。
+
+**出力してほしいカラム:** customer_id, customer_name, age_group, email_notification
+**ソート条件:** customer_idの昇順
+
+**結果:** ⚠️ 模範解答提示で終了（全角クォート・WHERE句でのエイリアス使用・SQL実行順の理解でヒント段階4まで進行。最終的にロジック自体は正しかった。次回は「WHEREはSELECTより先に評価される」点と半角クォートの入力に注意）
