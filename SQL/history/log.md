@@ -165,3 +165,24 @@
 **ソート条件:** total_salesの降順
 
 **結果:** ✅ 正解（1回目は全角クォート＋`SUM(oi.order_id * oi.unit_price)`という誤った掛け算対象で❌、2回目もクォートのみ修正で計算ミス残存、3回目で`quantity`に修正し✅）
+
+---
+
+## 2026-07-16 - 問題13
+**テーマ:** INSERT
+**難易度:** ★★☆
+
+`customers` テーブルに新しい顧客を1件登録してください（`BEGIN`〜`ROLLBACK`のトランザクション内で練習し、確認後はロールバックすること）。
+
+登録する値:
+- customer_id: 9999
+- customer_name: '出題テスト太郎'
+- email: 'test-insert@example.com'
+- prefecture: '東京都'
+- registered_at: '2026-07-16'
+- phone_numbers: {"090-9999-9999"}
+- profile: {"rank": "bronze", "age_group": "20s", "interests": [], "notification": {"email": true, "sms": false}}
+
+**出力してほしいカラム（登録後の確認用SELECT）:** customer_id, customer_name, email, prefecture, registered_at, phone_numbers, profile
+
+**結果:** ✅ 正解（1回目は配列リテラル・JSONBともに`{...}`を裸で書いてシングルクォートで囲まず❌、修正後の2回目で✅）
